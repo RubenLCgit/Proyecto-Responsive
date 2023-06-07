@@ -32,9 +32,14 @@
     box-sizing: border-box;
 }
 
-html, body{
+html{
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
     background-image: url(../img/pattern.png);
 }
 
@@ -173,7 +178,7 @@ header nav a{
 section{
     float: left;
     margin: 100px 80px 0px 300px;
-    width: 1500px;
+    width: 60%;
 }
 
 section>h2{
@@ -224,14 +229,28 @@ article:last-child{
     text-align: center;
 }
 
-article:last-child a{
-    font-size: 20px;
-    padding: 50px;
+article:last-child:hover{
+    border-radius: 50px;
+    background-color: #00548e;
+    color: white;
+    transition: all 600ms;
+}
+
+article:last-child h2{
+    height: 100%;
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    word-spacing: 5px;
+}
+
+article:last-child a:hover, article:last-child h2:hover{
+    color: white;
 }
 
 aside{
     float: left;
-    width: 350px;
+    width: 15%;
     margin-top: 80px;
 }
 
@@ -248,7 +267,7 @@ aside h3{
 
 #buscar{
     position: relative;
-    width: 300px;
+    width: 80%;
     margin: 10px auto;
 }
 
@@ -272,17 +291,18 @@ aside h3{
     border-left: 1px solid #e1e1e1;
 }
 
-#buscar input[type="text"]:hover,#buscar input[type="text"]:focus, #buscar input[type="submit"]:hover, #buscar input[type="submit"]:focus{
+#buscar input:hover, #login form input:hover,#buscar input:focus, #login form input:focus{
     outline: none;
     box-shadow: 1px 1px 5px #00548e inset;
     border-left: 1px solid #00548e;
     color: #00548e;
+    cursor: pointer;
 }
 
 #login{
     border: 1px solid #e1e1e1;
     background-color: white;
-    width: 300px;
+    width: 80%;
     height: 220px;
     margin: 20px auto;
     box-shadow: 1px 1px 5px gray;
@@ -290,7 +310,7 @@ aside h3{
 
 #login input[type="text"],#login input[type="password"]{
     display: block;
-    width: 280px;
+    width: 80%;
     height: 30px;
     border-radius: 5px;
     margin: 15px auto;
@@ -311,7 +331,7 @@ aside h3{
 }
 
 #login .botones{
-    width: 245px;
+    width: 75%;
     margin: 0px auto;
 }
 
@@ -320,7 +340,7 @@ aside h3{
     background-color: #36add8;
     color: white;
     font-family: trebuche;
-    width: 105px;
+    width: 40%;
     height: 40px;
     border: 1px solid black;
     border-left: none;
@@ -329,7 +349,13 @@ aside h3{
 }
 
 #login input[type="reset"]{
-    margin-left: 30px;
+    float: right;
+}
+
+#login input[type="submit"]:hover,#login input[type="reset"]:hover{
+    box-shadow: 1px 1px 5px inset black;
+    transition: all 300ms;
+    cursor: pointer;
 }
 
 #login .registrarse{
@@ -343,7 +369,7 @@ aside h3{
 #redesSociales{
     border: 1px solid #e1e1e1;
     background-color: white;
-    width: 300px;
+    width: 80%;
     height: 220px;
     margin: 20px auto;
     box-shadow: 1px 1px 5px gray;
@@ -373,7 +399,7 @@ aside h3{
 #colaboradores{
     border: 1px solid #e1e1e1;
     background-color: white;
-    width: 245px;
+    width: 70%;
     height: 240px;
     margin: 20px auto;
     box-shadow: 1px 1px 5px gray;
@@ -383,4 +409,76 @@ aside h3{
 footer {
     background-color: #000000;
     color: white;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 50px;
+}
+
+#footer{
+    width: 80%;
+    margin: 0px auto;
+}
+
+.boxFooter{
+    width: 30%;
+    margin-top: 40px;
+    float: left;
+}
+
+.boxFooter:nth-child(2),.boxFooter:nth-child(3){
+    margin-left: 80px;
+}
+
+.boxFooter h3{
+    background-color: #e3e3e3;
+    color: #000000;
+    font-family: bebas;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.boxFooter li{
+    margin-top: 30px;
+    color: white;
+    width: 80%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+}
+
+.boxFooter li:first-child{
+    border: none;
+}
+
+.boxFooter li::marker{
+    font-size: 30px;
+}
+
+.boxFooter a{
+    font-size: 30px;
+    color: #2a91c0;
+}
+
+.boxFooter iframe{
+    margin-top: 10px;
+}
+
+.logoHtml{
+    width: 100%;
+    padding: 8%;
+}
+
+.imagenes img{
+    width: 12%;
+    margin: 20px 5px;
+}
+
+.imagenes img:first-child{
+    margin-left: 8%;
+}
+
+.autor{
+    text-align: center;
+    margin: 10px;
 }
