@@ -103,6 +103,10 @@ header nav a{
 
 /* MAIN */
 
+#navbar{
+    width: 100%;
+}
+
 #navbar h1{
     background-image: url(../img/bakbaner.png);
     background-size: cover;
@@ -111,8 +115,7 @@ header nav a{
     color: white;
     font-family: trebuche;
     font-size: 40px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
     width: 100%;
     border: 1px solid black;
     text-shadow: 3px 3px 2px black;
@@ -177,7 +180,7 @@ header nav a{
 
 section{
     float: left;
-    margin: 100px 80px 0px 300px;
+    margin: 2% 2% 2% 300px;
     width: 60%;
 }
 
@@ -252,6 +255,7 @@ aside{
     float: left;
     width: 15%;
     margin-top: 80px;
+    margin: 0px auto;
 }
 
 aside h3{
@@ -481,4 +485,228 @@ footer {
 .autor{
     text-align: center;
     margin: 10px;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 2491px){
+    #redesSociales{
+        overflow-x: auto;
+        
+    }
+}
+
+@media (max-width: 2425px){
+    #titulo{
+        width: 95%;
+    }
+
+    #enlaces a{
+        margin-left: 2%;
+    }
+
+    #enlaces a:nth-child(1){
+        margin-left: 20%;
+    }
+
+    #enlaces a:nth-child(5){
+        margin-right: 20%;
+    }
+}
+
+@media (max-width: 2275px){
+    #enlaces{
+        width: 235px;
+        padding: 0px;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 5%;
+        float: right;
+    }
+
+    #enlaces a{
+        float: none;
+        height: 250px;
+    }
+    #enlaces a:first-child{
+        margin-left: 2%;
+    }
+    section{
+        float: right;
+        margin-left: 5%;
+    }
+    section article{
+        margin-top: 95px;
+    }
+    aside {
+        float: none;
+        clear: both;
+        width: 80%;
+        margin: 0px auto;
+    }
+    .asideBox{
+        float: left;
+        width: 400px;
+        margin: 10px;
+    }
+
+    .asideBox:first-child #buscar{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 2100px){
+    .asideBox:nth-child(3){
+        clear: both;
+    }
+    aside{
+        width: 840px;
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 2000px){
+    #titulo h1{
+        font-size: 20px;
+    }
+    #titulo{
+        height: 110px;
+    }
+    #footer{
+        width: 70%;
+    }
+    .boxFooter{
+        width: 300px;
+    }
+    .imagenes img{
+        width: 10%;
+    }
+    .boxFooter:first-child{
+        margin-left: 170px;
+    }
+}
+
+@media (max-width: 1758px){
+    .boxFooter:nth-child(3){
+        display: none;
+    }
+    .boxFooter:first-child{
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 1710px){
+    aside{
+        margin: 0px auto;
+    }
+    .boxFooter:first-child{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 1079px){
+    #footer .boxFooter{
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .boxFooter h3{
+        width: 80%;
+        margin: 0px auto;
+    }
+    #footer{
+        margin: 0px auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 840px){
+   .asideBox{
+    width: 300px;
+   }
+   aside{
+    width: 650px;
+   }
+   #login input[type="submit"], #login input[type="reset"]{
+    width: 49%;
+    }
+}
+
+@media (max-width: 810px){
+    #enlaces{
+        float: none;
+        width: 230px;
+        height: 170px;
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+    #enlaces p{
+        display: none;
+    }
+    #enlaces a{
+        height: 25px;
+    }
+    section{
+        float: none;
+        width: 80%;
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 652px){
+    #titulo {
+        height: 102px;
+    }
+    #titulo h1{
+        font-size: 15px;
+    }
+    aside{
+        width: 90%;
+    }
+    .asideBox{
+        float:none;
+        width: 80%;
+        margin: 0px auto;
+    }
+    .asideBox:first-child #buscar{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 575px){
+    header{
+        height: 100px;
+        margin: 0px auto;
+    }
+
+    header nav a{
+        padding: 0px;
+    }
+
+    header #logo{
+        float: none;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    header #logo h2{
+        width: 180px;
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 481px){
+    #titulo {
+        height: 120px;
+    }
+}
+
+@media (max-width: 280px){
+    #login input[type="submit"], #login input[type="reset"]{
+        font-size:small ;
+    }
+    header nav a{
+        font-size: 20px;
+    }
 }
