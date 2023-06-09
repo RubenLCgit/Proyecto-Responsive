@@ -29,6 +29,7 @@
 
 *{
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -59,10 +60,14 @@ a {
 
 /* HEADER */
 
-header, header a{
+header{
     background-color: #000000;
     color: white;
     height: 75px;
+}
+
+header a{
+    color: white;
 }
 
 #logo{
@@ -75,6 +80,7 @@ header, header a{
     margin: 10px 0px 10px 10%;
     font-family: bebas;
     letter-spacing: 2px;
+    overflow: hidden;
 }
 
 #logo .icons{
@@ -85,6 +91,56 @@ header, header a{
     padding-top: 1px;
     margin-left: 30px;
     margin-right: 10px;
+    /*Inicio animación Logo*/
+    animation-name: rotar-icono;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotar-icono{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+#logo:hover{
+    border-radius: 2px;
+    color: black;
+    background-color: #CCC;
+
+}
+
+#logo:hover .icons{
+    animation: desdeAbajo 500ms linear;
+}
+
+@keyframes desdeAbajo{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+#logo h2{
+    animation: desdeDerecha 500ms linear;
+}
+
+@keyframes desdeDerecha{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translate();
+    }
 }
 
 header nav{
@@ -99,6 +155,11 @@ header nav a{
     text-decoration: none;
     font-family: bebas;
     font-size: 25px;
+}
+
+header nav a:hover{
+    color: #37bcf9;
+    transform: scale(1.2,1.2);
 }
 
 /* MAIN */
@@ -119,6 +180,21 @@ header nav a{
     width: 100%;
     border: 1px solid black;
     text-shadow: 3px 3px 2px black;
+    animation: mostrarTexto 2s linear;
+    overflow: hidden;/*Se añade para que todo lo que salga fuera en la animacion no se vea*/
+}
+
+@keyframes mostrarTexto{
+    0%{
+        transform: translateX(-600%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0%);
+        text-shadow: 3px 3px 2px black;;
+        color: white;
+        opacity: 1;
+    }
 }
 
 #titulo{
@@ -128,6 +204,8 @@ header nav a{
     background-color: white;
     padding: 10px;
     border: 1px solid #e0e0e0;
+    box-shadow: 1px 1px 2px black;
+    animation: mostrarTexto 2s linear;
 }
 
 #enlaces{
@@ -135,7 +213,10 @@ header nav a{
     padding-left: 3.5%;
     padding-right:3.5%;
     margin-top: 2%;
+    overflow: hidden;
 }
+
+/* CARDS */
 
 #enlaces a{
     display: block;
@@ -152,11 +233,13 @@ header nav a{
     font-family: sans-serif,Arial, Helvetica;
     color: #00548e;
     text-align: center;
+    transition: all 300ms;
+    overflow: hidden;
 }
 
 #enlaces a:hover{
     box-shadow: 1px 1px 5px gray inset;
-    background-color: whitesmoke;
+    background-color:black;
 }
 
 #enlaces a:first-child{
@@ -170,17 +253,69 @@ header nav a{
     text-align: center;
     padding-top: 20px;
     padding-bottom: 40px;
+    transition: all 300ms;
+    overflow: hidden;
+}
+
+#enlaces a:hover .icons{
+    font-size: 90px;
+    color: #3737bcf9;
+    animation: mostrarIcono 300ms linear;
+}
+
+@keyframes mostrarIcono{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
 }
 
 #enlaces a h3{
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 30px;
+    transition: all 300ms;
+    overflow: hidden;
+}
+
+#enlaces a:hover h3{
+    color: white;
+    animation: mostrarCategoria 400ms linear;
+}
+
+@keyframes mostrarCategoria{
+    from{
+        transform: translateY(2000%);
+        color: black;
+    }
+    to{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+
+
+#enlaces a:hover p{
+    color: white;
+    animation: mostrarParrafo 600ms linear;
+}
+
+@keyframes mostrarParrafo{
+    from{
+        transform: translateX(2000%);
+        color: black;
+    }
+    to{
+        transform: translateX(0%);
+        color: white;
+    }
 }
 
 section{
     float: left;
-    margin: 2% 2% 2% 300px;
+    margin: 2% 2% 2% 12%;
     width: 60%;
 }
 
@@ -200,6 +335,7 @@ article{
     border: 1px solid #a1a1a1;
     background-color: white;
     margin-bottom: 40px;
+    box-shadow: 1px 1px 5px black;
 }
 
 article h4{
@@ -208,6 +344,11 @@ article h4{
     font-family: trebuche;
     font-size: 20px;
     padding: 10px 0px 10px 15px;
+}
+
+article h4 a:hover{
+    text-decoration: underline;
+    color: #2ca0ca;
 }
 
 article .descripcion{
@@ -341,9 +482,10 @@ aside h3{
 
 #login input[type="submit"],#login input[type="reset"]{
     display: inline-block;
-    background-color: #36add8;
+    background: linear-gradient(to bottom, #3eb8e5 0%, #2ca0ca 100%);
     color: white;
     font-family: trebuche;
+    text-align: center;
     width: 40%;
     height: 40px;
     border: 1px solid black;
@@ -368,6 +510,11 @@ aside h3{
 
 #login .registrarse a{
     color: #000000;
+}
+
+#login .registrarse a:hover{
+    text-decoration: underline;
+    color: #2ca0ca;
 }
 
 #redesSociales{
@@ -449,6 +596,15 @@ footer {
     width: 80%;
     border-bottom: 1px solid gray;
     padding-bottom: 20px;
+    transition: all 400ms;
+}
+
+.boxFooter li:hover{
+    padding-left: 20px;
+}
+
+.boxFooter li:hover a{
+    color: white;
 }
 
 .boxFooter li:first-child{
@@ -492,7 +648,11 @@ footer {
 @media (max-width: 2491px){
     #redesSociales{
         overflow-x: auto;
-        
+    }
+    #enlaces a:hover .icons{
+        font-size: 60px;
+        color: #3737bcf9;
+        animation: mostrarIcono 300ms linear;
     }
 }
 
@@ -693,16 +853,18 @@ footer {
     header #logo h2{
         width: 180px;
         margin: 0px auto;
+        background-color: #37bcf9;
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 481px){
     #titulo {
-        height: 120px;
+        height: 103px;
     }
 }
 
-@media (max-width: 280px){
+@media (max-width: 370px){
     #login input[type="submit"], #login input[type="reset"]{
         font-size:small ;
     }
